@@ -48,13 +48,15 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);  /* centra real */
-  width: 90%;              /* evita que se salga */
+  width: min(92vw, 900px);              /* evita que se salga */
   font-weight: bold;
   letter-spacing: normal;
   opacity: 1;
   animation: fadeIn 3s ease-in-out forwards;
-  text-align: center;
-  line-height: 1.4;
+  text-align: center;white-space: normal;         /* permite saltos */
+  overflow-wrap: anywhere;     /* corta si algo no cabe */
+  word-break: break-word;
+  line-height: 1.35;
   text-shadow: 0 2px 8px rgba(0,0,0,.8);
 }
 @keyframes fadeIn {
@@ -125,6 +127,10 @@ body {
       transform: scale(1.0);
 }
 
+.titulo{
+    max-height: 60vh;     /* limita altura */
+    overflow: auto;       /* hace scroll dentro del texto */
+  }
 }
 
 .flower {
